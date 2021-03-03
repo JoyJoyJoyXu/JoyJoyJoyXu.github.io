@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fiber 数据结构 | xal&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.1">
+    
+    <meta name="description" content="不积硅步无以至千里">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.5552dbc8.js" as="script"><link rel="preload" href="/assets/js/2.13f24521.js" as="script"><link rel="preload" href="/assets/js/35.830a6d46.js" as="script"><link rel="prefetch" href="/assets/js/10.5c255149.js"><link rel="prefetch" href="/assets/js/11.7dd2139e.js"><link rel="prefetch" href="/assets/js/12.8aefba11.js"><link rel="prefetch" href="/assets/js/13.43cd7ff7.js"><link rel="prefetch" href="/assets/js/14.13eefd0b.js"><link rel="prefetch" href="/assets/js/15.8a92b85f.js"><link rel="prefetch" href="/assets/js/16.941e0cff.js"><link rel="prefetch" href="/assets/js/17.20df6df6.js"><link rel="prefetch" href="/assets/js/18.0aef639d.js"><link rel="prefetch" href="/assets/js/19.0104b3c4.js"><link rel="prefetch" href="/assets/js/20.dafe04dc.js"><link rel="prefetch" href="/assets/js/21.83afbb75.js"><link rel="prefetch" href="/assets/js/22.4002fc72.js"><link rel="prefetch" href="/assets/js/23.55fad61b.js"><link rel="prefetch" href="/assets/js/24.ae2f7184.js"><link rel="prefetch" href="/assets/js/25.b9dcaf69.js"><link rel="prefetch" href="/assets/js/26.7c76b7d4.js"><link rel="prefetch" href="/assets/js/27.a75a0aaf.js"><link rel="prefetch" href="/assets/js/28.a3cf1298.js"><link rel="prefetch" href="/assets/js/29.ca311f9a.js"><link rel="prefetch" href="/assets/js/3.604382ba.js"><link rel="prefetch" href="/assets/js/30.c70cd909.js"><link rel="prefetch" href="/assets/js/31.a8d882ed.js"><link rel="prefetch" href="/assets/js/32.9fbe58a3.js"><link rel="prefetch" href="/assets/js/33.065796a8.js"><link rel="prefetch" href="/assets/js/34.ae441212.js"><link rel="prefetch" href="/assets/js/36.40f969b9.js"><link rel="prefetch" href="/assets/js/37.e1f1c358.js"><link rel="prefetch" href="/assets/js/38.621ce8fa.js"><link rel="prefetch" href="/assets/js/39.9148d76b.js"><link rel="prefetch" href="/assets/js/4.76b7f9ea.js"><link rel="prefetch" href="/assets/js/40.2130ad95.js"><link rel="prefetch" href="/assets/js/41.b18d4b55.js"><link rel="prefetch" href="/assets/js/42.fd3e1b28.js"><link rel="prefetch" href="/assets/js/5.86ead953.js"><link rel="prefetch" href="/assets/js/6.edb20b01.js"><link rel="prefetch" href="/assets/js/7.e0664e09.js"><link rel="prefetch" href="/assets/js/8.8feb1509.js"><link rel="prefetch" href="/assets/js/9.3b98064c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">xal's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/home/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/engineering/" class="nav-link router-link-active">
+  React源码解析
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/home/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/engineering/" class="nav-link router-link-active">
+  React源码解析
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>创建更新</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/engineering/update/ReactDOM.html" class="sidebar-link">ReactDOM.render</a></li><li><a href="/engineering/update/updateQueue.html" class="sidebar-link">updateQueue</a></li><li><a href="/engineering/update/Fiber.html" aria-current="page" class="active sidebar-link">Fiber 数据结构</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/engineering/update/Fiber.html#fiberroot" class="sidebar-link">FiberRoot</a></li><li class="sidebar-sub-header"><a href="/engineering/update/Fiber.html#fiberrootnode" class="sidebar-link">FiberRootNode</a></li><li class="sidebar-sub-header"><a href="/engineering/update/Fiber.html#rootfiber" class="sidebar-link">RootFiber</a></li><li class="sidebar-sub-header"><a href="/engineering/update/Fiber.html#fibernode" class="sidebar-link">FiberNode</a></li><li class="sidebar-sub-header"><a href="/engineering/update/Fiber.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/engineering/update/expirationTime.html" class="sidebar-link">expirationTime计算</a></li><li><a href="/engineering/update/模拟UpdateQueue.html" class="sidebar-link">模拟 UpdateQueue</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>任务调度</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>功能</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Hooks</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="fiber-数据结构"><a href="#fiber-数据结构" class="header-anchor">#</a> Fiber 数据结构</h1> <h2 id="fiberroot"><a href="#fiberroot" class="header-anchor">#</a> FiberRoot</h2> <p>上篇我们讲 render 的时候会创建 ReactRoot的时候会调用 createContainer 创建了 FiberRoot</p> <p>在 react-reconciler/src/ReactFiberRoot.js 文件找到了 创建FiberRoot的方法</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createFiberRoot</span><span class="token punctuation">(</span>
+    <span class="token parameter">containerInfo<span class="token operator">:</span> any<span class="token punctuation">,</span>
+    tag<span class="token operator">:</span> RootTag<span class="token punctuation">,</span>
+    hydrate<span class="token operator">:</span> boolean<span class="token punctuation">,</span>
+    hydrationCallbacks<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token operator">|</span> SuspenseHydrationCallbacks<span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> FiberRoot <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> root<span class="token operator">:</span> FiberRoot <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FiberRootNode</span><span class="token punctuation">(</span>containerInfo<span class="token punctuation">,</span> tag<span class="token punctuation">,</span> hydrate<span class="token punctuation">)</span><span class="token operator">:</span> any<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>enableSuspenseCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        root<span class="token punctuation">.</span>hydrationCallbacks <span class="token operator">=</span> hydrationCallbacks<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> uninitializedFiber <span class="token operator">=</span> <span class="token function">createHostRootFiber</span><span class="token punctuation">(</span>tag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    root<span class="token punctuation">.</span>current <span class="token operator">=</span> uninitializedFiber<span class="token punctuation">;</span>
+    uninitializedFiber<span class="token punctuation">.</span>stateNode <span class="token operator">=</span> root<span class="token punctuation">;</span>
+
+    <span class="token function">initializeUpdateQueue</span><span class="token punctuation">(</span>uninitializedFiber<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><ul><li>通过 FiberRootNode 创建 FiberRoot 实例</li> <li>调用 createHostRootFiber 创建第一个 FiberNode</li> <li>把 FiberNode 挂载到 FiberRoot 的current属性</li> <li>把 FiberRoot 挂载到 FiberNode 的 stateNode 属性上</li> <li>初始化 updateQueue</li> <li>返回 FiberRoot</li></ul> <p>我们现在来看看 FiberRootNode 的结构</p> <h2 id="fiberrootnode"><a href="#fiberrootnode" class="header-anchor">#</a> FiberRootNode</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">FiberRootNode</span><span class="token punctuation">(</span><span class="token parameter">containerInfo<span class="token punctuation">,</span> tag<span class="token punctuation">,</span> hydrate</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// root 类型 有legacy,batched,concurrent 分别对应 0｜1｜2</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tag <span class="token operator">=</span> tag<span class="token punctuation">;</span>
+    <span class="token comment">// 当前应用对应的Fiber对象,是 RootFiber</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// root节点,render 方法接受的第二个参数</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>containerInfo <span class="token operator">=</span> containerInfo<span class="token punctuation">;</span>
+    <span class="token comment">// 只有在持久更新中用到,一般用不到</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pendingChildren <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pingCache <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 完成的过期时间</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>finishedExpirationTime <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+    <span class="token comment">// 已经完成的任务的 FiberRoot对象,如果只有一个Root,拿它永远只可能是这个Root对应的Fiber，或者是null</span>
+    <span class="token comment">// 在commit 阶段只会处理这个值对应的人物</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>finishedWork <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 在任务被挂起的时候通过setTimeout设置的返回内容，用来下一次如果有新的任务挂起时清理还没触发的timeout</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>timeoutHandle <span class="token operator">=</span> noTimeout<span class="token punctuation">;</span>
+    <span class="token comment">// 顶层context对象，只有主动调用`renderSubtreeIntoContainer`时才会有用</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>context <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pendingContext <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 用来确定第一次渲染的时候是否需要融合</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>hydrate <span class="token operator">=</span> hydrate<span class="token punctuation">;</span>
+    <span class="token comment">// 调用 Scheduler.scheduleCallback返回的节点</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>callbackNode <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 与 root 相关联的回调优先级</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>callbackPriority <span class="token operator">=</span> NoPriority<span class="token punctuation">;</span>
+    <span class="token comment">// 树中存着的最早的过期时间</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>firstPendingTime <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+    <span class="token comment">// 树中存着的最早的暂停过期时间</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>firstSuspendedTime <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+    <span class="token comment">// 树中存着的最新暂停过期时间</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>lastSuspendedTime <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+    <span class="token comment">// 暂停范围后的下一个已知到期时间</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>nextKnownPendingLevel <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+    <span class="token comment">// 再次渲染的最新时间</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>lastPingedTime <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+    <span class="token comment">// 	再次渲染的过期时间</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>lastExpiredTime <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>enableSchedulerTracing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>interactionThreadID <span class="token operator">=</span> <span class="token function">unstable_getThreadID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>memoizedInteractions <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>pendingInteractionMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>enableSuspenseCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>hydrationCallbacks <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><p>以上属性,我们现在也不知道有啥作用和含义,先暂时注释一下,在后面的分析中肯定会用到的</p> <p>上面 FiberRoot 创建好了,我们来看看 rootFiber 也就是第一个 Fiber 对象的实例</p> <h2 id="rootfiber"><a href="#rootfiber" class="header-anchor">#</a> RootFiber</h2> <p>在上来创建 rootFiber 调用了createHostRootFiber</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createHostRootFiber</span><span class="token punctuation">(</span><span class="token parameter">tag<span class="token operator">:</span> RootTag</span><span class="token punctuation">)</span><span class="token operator">:</span> Fiber <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> mode<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">===</span> ConcurrentRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mode <span class="token operator">=</span> ConcurrentMode <span class="token operator">|</span> BlockingMode <span class="token operator">|</span> StrictMode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>tag <span class="token operator">===</span> BlockingRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mode <span class="token operator">=</span> BlockingMode <span class="token operator">|</span> StrictMode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        mode <span class="token operator">=</span> NoMode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>enableProfilerTimer <span class="token operator">&amp;&amp;</span> isDevToolsPresent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mode <span class="token operator">|=</span> ProfileMode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token function">createFiber</span><span class="token punctuation">(</span>HostRoot<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> mode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>此方法先根据传递的tag进行mode的处理，然后返回函数 createFiber 的结果。代码很简单,就是返回一个 FiberNode 对象的实例,</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">createFiber</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>
+    <span class="token parameter">tag<span class="token operator">:</span> WorkTag<span class="token punctuation">,</span>
+    pendingProps<span class="token operator">:</span> mixed<span class="token punctuation">,</span>
+    key<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token operator">|</span> string<span class="token punctuation">,</span>
+    mode<span class="token operator">:</span> TypeOfMode<span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Fiber <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">FiberNode</span><span class="token punctuation">(</span>tag<span class="token punctuation">,</span> pendingProps<span class="token punctuation">,</span> key<span class="token punctuation">,</span> mode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="fibernode"><a href="#fibernode" class="header-anchor">#</a> FiberNode</h2> <p>Fiber对应一个组件需要被处理或者已经处理了，一个组件可以有一个或者多个Fiber</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">FiberNode</span><span class="token punctuation">(</span>
+    <span class="token parameter">tag<span class="token operator">:</span> WorkTag<span class="token punctuation">,</span>
+    pendingProps<span class="token operator">:</span> mixed<span class="token punctuation">,</span>
+    key<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token operator">|</span> string<span class="token punctuation">,</span>
+    mode<span class="token operator">:</span> TypeOfMode<span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Instance</span>
+    <span class="token comment">// WorkTag 一共22种 定义在 shared/ReactWorkTags 文件中</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tag <span class="token operator">=</span> tag<span class="token punctuation">;</span>
+    <span class="token comment">// ReactElement里的key</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key<span class="token punctuation">;</span>
+    <span class="token comment">// ReactElement.type，也就是我们调用`createElement`的第一个参数 标签类型</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>elementType <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 异步组件resolved之后返回的内容，一般是`function`或者`class`</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 跟当前Fiber相关本地状态（比如浏览器环境就是DOM节点）</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stateNode <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Fiber</span>
+    <span class="token comment">// 指向他在Fiber节点树中的`parent`，用来在处理完这个节点之后向上返回</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>return <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 单链表结构,指向自己的第一个子节点</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>child <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 指向自己的兄弟节点, return 指向同一个夫节点</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>sibling <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// ref 对象</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ref <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 更新所产生的props</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pendingProps <span class="token operator">=</span> pendingProps<span class="token punctuation">;</span>
+    <span class="token comment">// 上一次渲染后的 props</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>memoizedProps <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 存放 Fiber 对应组件产生的 update 队列</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>updateQueue <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 上一次渲染后的 state</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>memoizedState <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// Fiber的依赖</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>dependencies <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// TypeOfMode 定义在 react-reconciler/src/ReactTypeOfMode.js 文件中</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>mode <span class="token operator">=</span> mode<span class="token punctuation">;</span>
+
+    <span class="token comment">// Effects</span>
+    <span class="token comment">// 记录 side Effect</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>effectTag <span class="token operator">=</span> NoEffect<span class="token punctuation">;</span>
+    <span class="token comment">// 下一个 side Effect</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>nextEffect <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 子树中第一个 side Effect</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>firstEffect <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 子树中最后一个 side Effect</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>lastEffect <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">// 代表任务在未来的哪个时间点应该被完成</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>expirationTime <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+    <span class="token comment">// 快速确定子树中是否有不在等待的变化</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>childExpirationTime <span class="token operator">=</span> NoWork<span class="token punctuation">;</span>
+
+    <span class="token comment">// 在Fiber树更新的过程中，每个Fiber都会有一个跟其对应的Fiber</span>
+    <span class="token comment">// 我们称他为`current &lt;==&gt; workInProgress`</span>
+    <span class="token comment">// 在渲染完成之后他们会交换位置</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>alternate <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>enableProfilerTimer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>actualDuration <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token number">NaN</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>actualStartTime <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token number">NaN</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>selfBaseDuration <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token number">NaN</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>treeBaseDuration <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token number">NaN</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">this</span><span class="token punctuation">.</span>actualDuration <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>actualStartTime <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>selfBaseDuration <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>treeBaseDuration <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>enableUserTimingAPI<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_debugID <span class="token operator">=</span> debugCounter<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_debugIsCurrentlyTiming <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br></div></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>之前一直说 FiberRoot, RootFiber,Fiber,这些都是啊?之间有何关系? Fiber 到底是啥?</p> <p>通过 Fiber 对象上的各个属性,我们可以知道</p> <ol><li>每个 ReactElement 对应一个 Fiber 对象</li> <li>Fiber 记录节点的各种状态</li> <li>Fiber 通过 return,child,sibling 串联整个应用形成的树结构</li></ol> <p>用一张图表示他们的结构</p> <p><img src="/img/Filber.png" alt="img4" title="Filber"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/3/2021, 10:20:40 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/engineering/update/updateQueue.html" class="prev">
+        updateQueue
+      </a></span> <span class="next"><a href="/engineering/update/expirationTime.html">
+        expirationTime计算
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.5552dbc8.js" defer></script><script src="/assets/js/2.13f24521.js" defer></script><script src="/assets/js/35.830a6d46.js" defer></script>
+  </body>
+</html>

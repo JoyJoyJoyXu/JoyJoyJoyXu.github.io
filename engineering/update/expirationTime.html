@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>expirationTime计算 | xal&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.1">
+    
+    <meta name="description" content="不积硅步无以至千里">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.5552dbc8.js" as="script"><link rel="preload" href="/assets/js/2.13f24521.js" as="script"><link rel="preload" href="/assets/js/37.e1f1c358.js" as="script"><link rel="prefetch" href="/assets/js/10.5c255149.js"><link rel="prefetch" href="/assets/js/11.7dd2139e.js"><link rel="prefetch" href="/assets/js/12.8aefba11.js"><link rel="prefetch" href="/assets/js/13.43cd7ff7.js"><link rel="prefetch" href="/assets/js/14.13eefd0b.js"><link rel="prefetch" href="/assets/js/15.8a92b85f.js"><link rel="prefetch" href="/assets/js/16.941e0cff.js"><link rel="prefetch" href="/assets/js/17.20df6df6.js"><link rel="prefetch" href="/assets/js/18.0aef639d.js"><link rel="prefetch" href="/assets/js/19.0104b3c4.js"><link rel="prefetch" href="/assets/js/20.dafe04dc.js"><link rel="prefetch" href="/assets/js/21.83afbb75.js"><link rel="prefetch" href="/assets/js/22.4002fc72.js"><link rel="prefetch" href="/assets/js/23.55fad61b.js"><link rel="prefetch" href="/assets/js/24.ae2f7184.js"><link rel="prefetch" href="/assets/js/25.b9dcaf69.js"><link rel="prefetch" href="/assets/js/26.7c76b7d4.js"><link rel="prefetch" href="/assets/js/27.a75a0aaf.js"><link rel="prefetch" href="/assets/js/28.a3cf1298.js"><link rel="prefetch" href="/assets/js/29.ca311f9a.js"><link rel="prefetch" href="/assets/js/3.604382ba.js"><link rel="prefetch" href="/assets/js/30.c70cd909.js"><link rel="prefetch" href="/assets/js/31.a8d882ed.js"><link rel="prefetch" href="/assets/js/32.9fbe58a3.js"><link rel="prefetch" href="/assets/js/33.065796a8.js"><link rel="prefetch" href="/assets/js/34.ae441212.js"><link rel="prefetch" href="/assets/js/35.830a6d46.js"><link rel="prefetch" href="/assets/js/36.40f969b9.js"><link rel="prefetch" href="/assets/js/38.621ce8fa.js"><link rel="prefetch" href="/assets/js/39.9148d76b.js"><link rel="prefetch" href="/assets/js/4.76b7f9ea.js"><link rel="prefetch" href="/assets/js/40.2130ad95.js"><link rel="prefetch" href="/assets/js/41.b18d4b55.js"><link rel="prefetch" href="/assets/js/42.fd3e1b28.js"><link rel="prefetch" href="/assets/js/5.86ead953.js"><link rel="prefetch" href="/assets/js/6.edb20b01.js"><link rel="prefetch" href="/assets/js/7.e0664e09.js"><link rel="prefetch" href="/assets/js/8.8feb1509.js"><link rel="prefetch" href="/assets/js/9.3b98064c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">xal's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/home/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/engineering/" class="nav-link router-link-active">
+  React源码解析
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/home/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/engineering/" class="nav-link router-link-active">
+  React源码解析
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>创建更新</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/engineering/update/ReactDOM.html" class="sidebar-link">ReactDOM.render</a></li><li><a href="/engineering/update/updateQueue.html" class="sidebar-link">updateQueue</a></li><li><a href="/engineering/update/Fiber.html" class="sidebar-link">Fiber 数据结构</a></li><li><a href="/engineering/update/expirationTime.html" aria-current="page" class="active sidebar-link">expirationTime计算</a></li><li><a href="/engineering/update/模拟UpdateQueue.html" class="sidebar-link">模拟 UpdateQueue</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>任务调度</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>功能</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Hooks</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="expirationtime计算"><a href="#expirationtime计算" class="header-anchor">#</a> expirationTime计算</h1> <p>expirationTime 时间的计算和 React 没有任何关联,首先让我们抛开 React 相关东西,单纯的来看 这个计算,在 /react-reconciler/src/ReactFiberExpirationTime.js 中我们可以看到相关的expirationTime计算 公式,</p> <p>代码如下:</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// MAX_SIGNED_31_BIT_INT 默认定义为 Math.pow(2, 30) - 1  1073741823</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> Sync <span class="token operator">=</span> <span class="token constant">MAX_SIGNED_31_BIT_INT</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> Batched <span class="token operator">=</span> Sync <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">const</span> <span class="token constant">UNIT_SIZE</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">MAGIC_NUMBER_OFFSET</span> <span class="token operator">=</span> Batched <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// 1073741821</span>
+
+
+<span class="token comment">// 1 unit of expiration time represents 10ms.</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">msToExpirationTime</span><span class="token punctuation">(</span><span class="token parameter">ms<span class="token operator">:</span> number</span><span class="token punctuation">)</span><span class="token operator">:</span> ExpirationTime <span class="token punctuation">{</span>
+  <span class="token comment">// Always add an offset so that we don't clash with the magic number for NoWork.</span>
+  <span class="token keyword">return</span> <span class="token constant">MAGIC_NUMBER_OFFSET</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>ms <span class="token operator">/</span> <span class="token constant">UNIT_SIZE</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">expirationTimeToMs</span><span class="token punctuation">(</span><span class="token parameter">expirationTime<span class="token operator">:</span> ExpirationTime</span><span class="token punctuation">)</span><span class="token operator">:</span> number <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token constant">MAGIC_NUMBER_OFFSET</span> <span class="token operator">-</span> expirationTime<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token constant">UNIT_SIZE</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">function</span> <span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token parameter">num<span class="token operator">:</span> number<span class="token punctuation">,</span> precision<span class="token operator">:</span> number</span><span class="token punctuation">)</span><span class="token operator">:</span> number <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>num <span class="token operator">/</span> precision<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> precision<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">function</span> <span class="token function">computeExpirationBucket</span><span class="token punctuation">(</span>
+  <span class="token parameter">currentTime<span class="token punctuation">,</span>
+  expirationInMs<span class="token punctuation">,</span>
+  bucketSizeMs<span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> ExpirationTime <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token constant">MAGIC_NUMBER_OFFSET</span> <span class="token operator">-</span>
+    <span class="token function">ceiling</span><span class="token punctuation">(</span>
+      <span class="token constant">MAGIC_NUMBER_OFFSET</span> <span class="token operator">-</span> currentTime <span class="token operator">+</span> expirationInMs <span class="token operator">/</span> <span class="token constant">UNIT_SIZE</span><span class="token punctuation">,</span>
+      bucketSizeMs <span class="token operator">/</span> <span class="token constant">UNIT_SIZE</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">LOW_PRIORITY_EXPIRATION</span> <span class="token operator">=</span> <span class="token number">5000</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">LOW_PRIORITY_BATCH_SIZE</span> <span class="token operator">=</span> <span class="token number">250</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">computeAsyncExpiration</span><span class="token punctuation">(</span>
+  <span class="token parameter">currentTime<span class="token operator">:</span> ExpirationTime<span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> ExpirationTime <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">computeExpirationBucket</span><span class="token punctuation">(</span>
+    currentTime<span class="token punctuation">,</span>
+    <span class="token constant">LOW_PRIORITY_EXPIRATION</span><span class="token punctuation">,</span>
+    <span class="token constant">LOW_PRIORITY_BATCH_SIZE</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">computeSuspenseExpiration</span><span class="token punctuation">(</span>
+  <span class="token parameter">currentTime<span class="token operator">:</span> ExpirationTime<span class="token punctuation">,</span>
+  timeoutMs<span class="token operator">:</span> number<span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> ExpirationTime <span class="token punctuation">{</span>
+  <span class="token comment">// TODO: Should we warn if timeoutMs is lower than the normal pri expiration time?</span>
+  <span class="token keyword">return</span> <span class="token function">computeExpirationBucket</span><span class="token punctuation">(</span>
+    currentTime<span class="token punctuation">,</span>
+    timeoutMs<span class="token punctuation">,</span>
+    <span class="token constant">LOW_PRIORITY_BATCH_SIZE</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">HIGH_PRIORITY_EXPIRATION</span> <span class="token operator">=</span> __DEV__ <span class="token operator">?</span> <span class="token number">500</span> <span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">HIGH_PRIORITY_BATCH_SIZE</span> <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">computeInteractiveExpiration</span><span class="token punctuation">(</span><span class="token parameter">currentTime<span class="token operator">:</span> ExpirationTime</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">computeExpirationBucket</span><span class="token punctuation">(</span>
+    currentTime<span class="token punctuation">,</span>
+    <span class="token constant">HIGH_PRIORITY_EXPIRATION</span><span class="token punctuation">,</span>
+    <span class="token constant">HIGH_PRIORITY_BATCH_SIZE</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br></div></div><p>React 有两种类型的 ExpirationTime, 一个是 Interactive,另一种是普通的异步。Interactive的比如说是由事件触发的，那么他的响应优先级会比较高因为涉及到交互</p> <p>拿 computeAsyncExpiration 和 computeInteractiveExpiration 方法来说,他们分别调用 computeExpirationBucket 传入以下:</p> <ul><li>currentTime 调用 msToExpirationTime 得到的 ExpirationTime</li> <li>expirationInMs 不同优先级任务会传不同的偏移量，把不同优先级的时间拉开差距</li> <li>bucketSizeMs 越大，批处理的间隔就越大</li></ul> <p>我们现在套用公式来试试,</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// computeAsyncExpiration 公式</span>
+<span class="token function">computeExpirationBucket</span><span class="token punctuation">(</span>currentTime<span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">,</span><span class="token number">250</span><span class="token punctuation">)</span>
+<span class="token comment">// computeExpirationBucket 方法</span>
+<span class="token punctuation">(</span><span class="token number">1073741821</span><span class="token operator">-</span><span class="token function">ceiling</span><span class="token punctuation">(</span><span class="token number">1073741821</span><span class="token operator">-</span>currentTime<span class="token operator">+</span><span class="token number">5000</span><span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">250</span><span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 代入 ceiling</span>
+<span class="token number">1073741821</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1073741821</span> <span class="token operator">-</span> currentTime <span class="token operator">+</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">25</span>
+
+<span class="token comment">// 我们设定currentTime的值为 997到1025得出结果为</span>
+<span class="token comment">// 从997到1021的结果都是496</span>
+<span class="token comment">// 从1022到1025的结果都是521</span>
+<span class="token comment">// 可以得出再间隔25ms内即(1021 - 997 + 1)结果是一致的。</span>
+<span class="token comment">// 也即异步更新的过期时间间隔是25ms</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>其他的如 computeSuspenseExpiration、computeInteractiveExpiration是同样的道理。</p> <p>React为什么这么设计呢？</p> <p>这么做也许是为了让非常相近的两次更新得到相同的expirationTime，然后在一次更新中完成，相当于一个自动的batchedUpdates。</p> <p>我们知道setState可能会批量更新，就是这个原因。</p> <p>内部会把异步更新间隔在25ms内的更新合并成一个，可以很大的提高性能</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/3/2021, 10:20:40 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/engineering/update/Fiber.html" class="prev">
+        Fiber 数据结构
+      </a></span> <span class="next"><a href="/engineering/update/模拟UpdateQueue.html">
+        模拟 UpdateQueue
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.5552dbc8.js" defer></script><script src="/assets/js/2.13f24521.js" defer></script><script src="/assets/js/37.e1f1c358.js" defer></script>
+  </body>
+</html>
