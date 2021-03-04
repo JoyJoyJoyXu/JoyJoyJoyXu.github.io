@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>栈 | xal&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.1">
+    
+    <meta name="description" content="不积硅步无以至千里">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.3f6fe995.js" as="script"><link rel="preload" href="/assets/js/2.13f24521.js" as="script"><link rel="preload" href="/assets/js/16.98c62889.js" as="script"><link rel="prefetch" href="/assets/js/10.12d3fdab.js"><link rel="prefetch" href="/assets/js/11.096de140.js"><link rel="prefetch" href="/assets/js/12.89c20dac.js"><link rel="prefetch" href="/assets/js/13.51b7e93d.js"><link rel="prefetch" href="/assets/js/14.2dac68b8.js"><link rel="prefetch" href="/assets/js/15.4979884e.js"><link rel="prefetch" href="/assets/js/17.c38dab49.js"><link rel="prefetch" href="/assets/js/18.1455112b.js"><link rel="prefetch" href="/assets/js/19.1ad3d500.js"><link rel="prefetch" href="/assets/js/20.f396b424.js"><link rel="prefetch" href="/assets/js/21.4ca61081.js"><link rel="prefetch" href="/assets/js/22.21a559df.js"><link rel="prefetch" href="/assets/js/23.1125c7c1.js"><link rel="prefetch" href="/assets/js/24.94c72c3b.js"><link rel="prefetch" href="/assets/js/25.0f9bf0a2.js"><link rel="prefetch" href="/assets/js/26.1ffec0f8.js"><link rel="prefetch" href="/assets/js/27.b939f73b.js"><link rel="prefetch" href="/assets/js/28.f7f36575.js"><link rel="prefetch" href="/assets/js/29.a48e4b9a.js"><link rel="prefetch" href="/assets/js/3.a537ba19.js"><link rel="prefetch" href="/assets/js/30.5fc9a97e.js"><link rel="prefetch" href="/assets/js/31.b9db6dc2.js"><link rel="prefetch" href="/assets/js/32.d775227f.js"><link rel="prefetch" href="/assets/js/33.19ba4aa6.js"><link rel="prefetch" href="/assets/js/34.b6e37d8b.js"><link rel="prefetch" href="/assets/js/35.a847b3a3.js"><link rel="prefetch" href="/assets/js/36.fd9febd0.js"><link rel="prefetch" href="/assets/js/37.1c8e0c47.js"><link rel="prefetch" href="/assets/js/38.8f024e8e.js"><link rel="prefetch" href="/assets/js/39.c0382831.js"><link rel="prefetch" href="/assets/js/4.7136d2a4.js"><link rel="prefetch" href="/assets/js/40.e3fd91a5.js"><link rel="prefetch" href="/assets/js/41.43a1c8f4.js"><link rel="prefetch" href="/assets/js/42.b0368b83.js"><link rel="prefetch" href="/assets/js/43.b2029a7e.js"><link rel="prefetch" href="/assets/js/44.c75039e7.js"><link rel="prefetch" href="/assets/js/45.577e0be4.js"><link rel="prefetch" href="/assets/js/46.57125079.js"><link rel="prefetch" href="/assets/js/47.004f27e0.js"><link rel="prefetch" href="/assets/js/48.2d8ba5ef.js"><link rel="prefetch" href="/assets/js/49.a0ae4c77.js"><link rel="prefetch" href="/assets/js/5.0edcdfe0.js"><link rel="prefetch" href="/assets/js/50.3fd029ca.js"><link rel="prefetch" href="/assets/js/51.2bbacdf1.js"><link rel="prefetch" href="/assets/js/52.09907157.js"><link rel="prefetch" href="/assets/js/53.e9175141.js"><link rel="prefetch" href="/assets/js/54.21c9b22c.js"><link rel="prefetch" href="/assets/js/55.59b8a73c.js"><link rel="prefetch" href="/assets/js/56.70a9f2ca.js"><link rel="prefetch" href="/assets/js/57.249d44b0.js"><link rel="prefetch" href="/assets/js/6.edb20b01.js"><link rel="prefetch" href="/assets/js/7.0bf49390.js"><link rel="prefetch" href="/assets/js/8.2f5fb5ae.js"><link rel="prefetch" href="/assets/js/9.8139f065.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">xal's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/home/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  算法
+</a></div><div class="nav-item"><a href="/engineering/" class="nav-link">
+  React源码解析
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/home/" class="nav-link">
+  博客
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  算法
+</a></div><div class="nav-item"><a href="/engineering/" class="nav-link">
+  React源码解析
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>常见数据结构</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/structure/stack.html" aria-current="page" class="active sidebar-link">栈</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/structure/stack.html#基于数组实现栈" class="sidebar-link">基于数组实现栈</a></li><li class="sidebar-sub-header"><a href="/algorithm/structure/stack.html#基于对象实现stack" class="sidebar-link">基于对象实现Stack</a></li><li class="sidebar-sub-header"><a href="/algorithm/structure/stack.html#常见应用" class="sidebar-link">常见应用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/structure/stack.html#有效的括号" class="sidebar-link">有效的括号</a></li><li class="sidebar-sub-header"><a href="/algorithm/structure/stack.html#二叉树的前序遍历" class="sidebar-link">二叉树的前序遍历</a></li><li class="sidebar-sub-header"><a href="/algorithm/structure/stack.html#移除k位数字" class="sidebar-link">移除K位数字</a></li></ul></li></ul></li><li><a href="/algorithm/structure/queue.html" class="sidebar-link">队列</a></li><li><a href="/algorithm/structure/linkedlist.html" class="sidebar-link">链表</a></li><li><a href="/algorithm/structure/binarytree.html" class="sidebar-link">二叉树</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常用算法</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="栈"><a href="#栈" class="header-anchor">#</a> 栈</h1> <p>栈是一种遵从<strong>后进先出</strong>（LIFO）原则的有序集合。新添加或待删除的元素都保存在栈的同一端，称作栈顶，另一端就叫栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。</p> <p>栈有以下基本方法</p> <ul><li>push 添加一个(或几个)新元素到栈顶</li> <li>移除栈顶的元素，同时返回被移除的元素</li> <li>peek()：返回栈顶的元素，不对栈做任何修改（该方法不会移除栈顶的元素，仅仅返回它）</li> <li>isEmpty()：如果栈里没有任何元素就返回 true，否则返回 false。</li> <li>clear()：移除栈里的所有元素。</li> <li>size()：返回栈里的元素个数。该方法和数组的 length 属性很类似。</li></ul> <h2 id="基于数组实现栈"><a href="#基于数组实现栈" class="header-anchor">#</a> 基于数组实现栈</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 添加一个（或几个）新元素到栈顶
+     * @param {*} element 
+     */</span>
+    <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>element<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 移除栈顶的元素，同时返回被移除的元素
+     */</span>
+    <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * ：返回栈顶的元素，不对栈做任何修改（该方法不会移除栈顶的元素，仅仅返回它）
+     */</span>
+    <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 如果栈里没有任何元素就返回 true，否则返回 false。
+     */</span>
+    <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 移除栈里的所有元素
+     */</span>
+    <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 返回栈里的元素个数。该方法和数组的 length 属性很类似。
+     */</span>
+    <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span>length
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><h2 id="基于对象实现stack"><a href="#基于对象实现stack" class="header-anchor">#</a> 基于对象实现Stack</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 添加一个（或几个）新元素到栈顶
+     * @param {*} element 
+     */</span>
+    <span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span> <span class="token operator">=</span> element
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 移除栈顶的元素，同时返回被移除的元素
+     */</span>
+    <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">--</span>
+        <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span>
+        <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> result
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * ：返回栈顶的元素，不对栈做任何修改（该方法不会移除栈顶的元素，仅仅返回它）
+     */</span>
+    <span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">undefined</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 如果栈里没有任何元素就返回 true，否则返回 false。
+     */</span>
+    <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">===</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 移除栈里的所有元素
+     */</span>
+    <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span>
+
+        <span class="token comment">// 遵循 LIFO 原则，使用下面的逻辑来移除栈中所有的元素</span>
+        <span class="token comment">// while (!this.isEmpty()) {</span>
+        <span class="token comment">//     this.pop()</span>
+        <span class="token comment">// }</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 返回栈里的元素个数。该方法和数组的 length 属性很类似。
+     */</span>
+    <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 创建 toString 方法
+     */</span>
+    <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">''</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">let</span> objString <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            objString <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>objString<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> objString
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br></div></div><h2 id="常见应用"><a href="#常见应用" class="header-anchor">#</a> 常见应用</h2> <h3 id="有效的括号"><a href="#有效的括号" class="header-anchor">#</a> 有效的括号</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/*
+ * @lc app=leetcode.cn id=20 lang=javascript
+ *
+ * [20] 有效的括号
+ */</span>
+<span class="token comment">/**
+ * @param {string} s
+ * @return {boolean}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">isValid</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> char <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>char<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token string">'('</span><span class="token operator">:</span>
+                stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">')'</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'['</span><span class="token operator">:</span>
+                stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">']'</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">'{'</span><span class="token operator">:</span>
+                stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'}'</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>char <span class="token operator">!==</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token boolean">false</span>
+                <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> stack<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h3 id="二叉树的前序遍历"><a href="#二叉树的前序遍历" class="header-anchor">#</a> 二叉树的前序遍历</h3> <p>leetcode 144</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> <span class="token function-variable function">preorderTraversal</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token function">getVal</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> root<span class="token punctuation">)</span>
+    <span class="token keyword">function</span> <span class="token function">getVal</span><span class="token punctuation">(</span><span class="token parameter">arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tree</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tree <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>tree<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+        <span class="token function">getVal</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> tree<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">getVal</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> tree<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="移除k位数字"><a href="#移除k位数字" class="header-anchor">#</a> 移除K位数字</h3> <p>leetcode 402</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> <span class="token function-variable function">removeKdigits</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> k</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> n <span class="token keyword">of</span> num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> stack<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> stack<span class="token punctuation">[</span>stack<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            k<span class="token operator">--</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">!=</span> <span class="token string">'0'</span> <span class="token operator">||</span> stack<span class="token punctuation">.</span>length <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 强制删除</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        k<span class="token operator">--</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> stack<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token string">&quot;0&quot;</span> <span class="token operator">:</span> stack<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/4/2021, 10:29:09 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/basics/complexity.html" class="prev">
+        复杂度分析
+      </a></span> <span class="next"><a href="/algorithm/structure/queue.html">
+        队列
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3f6fe995.js" defer></script><script src="/assets/js/2.13f24521.js" defer></script><script src="/assets/js/16.98c62889.js" defer></script>
+  </body>
+</html>

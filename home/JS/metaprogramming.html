@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>元编程 | xal&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.1">
+    
+    <meta name="description" content="不积硅步无以至千里">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.3f6fe995.js" as="script"><link rel="preload" href="/assets/js/2.13f24521.js" as="script"><link rel="preload" href="/assets/js/49.a0ae4c77.js" as="script"><link rel="prefetch" href="/assets/js/10.12d3fdab.js"><link rel="prefetch" href="/assets/js/11.096de140.js"><link rel="prefetch" href="/assets/js/12.89c20dac.js"><link rel="prefetch" href="/assets/js/13.51b7e93d.js"><link rel="prefetch" href="/assets/js/14.2dac68b8.js"><link rel="prefetch" href="/assets/js/15.4979884e.js"><link rel="prefetch" href="/assets/js/16.98c62889.js"><link rel="prefetch" href="/assets/js/17.c38dab49.js"><link rel="prefetch" href="/assets/js/18.1455112b.js"><link rel="prefetch" href="/assets/js/19.1ad3d500.js"><link rel="prefetch" href="/assets/js/20.f396b424.js"><link rel="prefetch" href="/assets/js/21.4ca61081.js"><link rel="prefetch" href="/assets/js/22.21a559df.js"><link rel="prefetch" href="/assets/js/23.1125c7c1.js"><link rel="prefetch" href="/assets/js/24.94c72c3b.js"><link rel="prefetch" href="/assets/js/25.0f9bf0a2.js"><link rel="prefetch" href="/assets/js/26.1ffec0f8.js"><link rel="prefetch" href="/assets/js/27.b939f73b.js"><link rel="prefetch" href="/assets/js/28.f7f36575.js"><link rel="prefetch" href="/assets/js/29.a48e4b9a.js"><link rel="prefetch" href="/assets/js/3.a537ba19.js"><link rel="prefetch" href="/assets/js/30.5fc9a97e.js"><link rel="prefetch" href="/assets/js/31.b9db6dc2.js"><link rel="prefetch" href="/assets/js/32.d775227f.js"><link rel="prefetch" href="/assets/js/33.19ba4aa6.js"><link rel="prefetch" href="/assets/js/34.b6e37d8b.js"><link rel="prefetch" href="/assets/js/35.a847b3a3.js"><link rel="prefetch" href="/assets/js/36.fd9febd0.js"><link rel="prefetch" href="/assets/js/37.1c8e0c47.js"><link rel="prefetch" href="/assets/js/38.8f024e8e.js"><link rel="prefetch" href="/assets/js/39.c0382831.js"><link rel="prefetch" href="/assets/js/4.7136d2a4.js"><link rel="prefetch" href="/assets/js/40.e3fd91a5.js"><link rel="prefetch" href="/assets/js/41.43a1c8f4.js"><link rel="prefetch" href="/assets/js/42.b0368b83.js"><link rel="prefetch" href="/assets/js/43.b2029a7e.js"><link rel="prefetch" href="/assets/js/44.c75039e7.js"><link rel="prefetch" href="/assets/js/45.577e0be4.js"><link rel="prefetch" href="/assets/js/46.57125079.js"><link rel="prefetch" href="/assets/js/47.004f27e0.js"><link rel="prefetch" href="/assets/js/48.2d8ba5ef.js"><link rel="prefetch" href="/assets/js/5.0edcdfe0.js"><link rel="prefetch" href="/assets/js/50.3fd029ca.js"><link rel="prefetch" href="/assets/js/51.2bbacdf1.js"><link rel="prefetch" href="/assets/js/52.09907157.js"><link rel="prefetch" href="/assets/js/53.e9175141.js"><link rel="prefetch" href="/assets/js/54.21c9b22c.js"><link rel="prefetch" href="/assets/js/55.59b8a73c.js"><link rel="prefetch" href="/assets/js/56.70a9f2ca.js"><link rel="prefetch" href="/assets/js/57.249d44b0.js"><link rel="prefetch" href="/assets/js/6.edb20b01.js"><link rel="prefetch" href="/assets/js/7.0bf49390.js"><link rel="prefetch" href="/assets/js/8.2f5fb5ae.js"><link rel="prefetch" href="/assets/js/9.8139f065.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">xal's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/home/" class="nav-link router-link-active">
+  博客
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/engineering/" class="nav-link">
+  React源码解析
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/home/" class="nav-link router-link-active">
+  博客
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/engineering/" class="nav-link">
+  React源码解析
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/home/JS/promise.html" class="sidebar-link">Promise</a></li><li><a href="/home/JS/shouxie.html" class="sidebar-link">手写系列</a></li><li><a href="/home/JS/metaprogramming.html" aria-current="page" class="active sidebar-link">元编程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Node</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>TypeScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTTP</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小程序原理</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>杂项</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="元编程"><a href="#元编程" class="header-anchor">#</a> 元编程</h1></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/4/2021, 10:29:09 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/home/JS/shouxie.html" class="prev">
+        手写系列
+      </a></span> <span class="next"><a href="/home/Node/qps.html">
+        QPS测试
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3f6fe995.js" defer></script><script src="/assets/js/2.13f24521.js" defer></script><script src="/assets/js/49.a0ae4c77.js" defer></script>
+  </body>
+</html>
